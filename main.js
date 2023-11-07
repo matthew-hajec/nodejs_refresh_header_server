@@ -10,9 +10,11 @@ const app = express();
 app.use(cookieParser());
 
 // Create a route handler for the home path
-app.get('/', (req, res) => {
-    // Set the refresh header to a random number between 5 and 15
-    const refresh = Math.floor(Math.random() * 10) + 5;
+app.get('/:time', (req, res) => {
+    // Parse the time from the request
+    const refresh = parseInt(req.params.time);
+
+    // Set the refresh header
     res.set('Refresh', refresh);
 
     // Increment the "refresh_count" cookie
