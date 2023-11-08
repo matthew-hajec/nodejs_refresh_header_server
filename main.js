@@ -1,7 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
-const PORT = parseInt(process.env.PORT) || 3000;
+const PORT = parseInt(process.env.SERVER_PORT1) || 3000;
 
 // Create an express application
 const app = express();
